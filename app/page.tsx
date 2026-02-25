@@ -165,9 +165,10 @@ export default function Page() {
       </div>
 
       <div
+        className="session-resources-grid"
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+          gridTemplateColumns: 'repeat(2, 1fr)',
           gap: '24px',
         }}
       >

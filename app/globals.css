@@ -384,6 +384,10 @@ button {
     grid-template-columns: 1fr !important;
   }
 
+  .session-resources-grid {
+    grid-template-columns: 1fr !important;
+  }
+
   .issue-filters {
     display: none !important;
   }
