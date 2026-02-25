@@ -15,6 +15,7 @@ const sessionResources: ResourceCard[] = [
       'Google Sheet for participants to assign themselves to issues they want to work on. Claim your issue and track progress during the session.',
     url: 'https://docs.google.com/spreadsheets/d/1lltOy3A25zWUXb3XdtkHBD5CHzrmfm8DRaWt7vh0WKU/edit?gid=232343915#gid=232343915',
     isExternal: true,
+    note: 'Access to the Assignment Sheet will be provided on the day of the event.',
   },
 ]
 
@@ -87,6 +88,30 @@ export default function Page() {
           Your guide to contributing to Backstage and Community Plugins. Explore resources,
           complete your setup checklist, and find issues to work on.
         </p>
+      </div>
+
+      <div
+        style={{
+          background: 'var(--contribfest-progress-bg, #dcfce7)',
+          borderRadius: '8px',
+          padding: '16px',
+          marginBottom: '32px',
+          fontSize: '17px',
+          color: 'var(--bui-fg-primary, #000)',
+          lineHeight: '1.6',
+        }}
+      >
+        The next Backstage ContribFest session takes place at KubeCon in Amsterdam on March 26,
+        2026 at 13:45 CET in room G107, make sure to{' '}
+        <a
+          href="https://kccnceu2026.sched.com/event/2EF7v/contribfest-supercharge-your-open-source-impact-backstage-contribfest-live-andre-wanlin-emma-indal-spotify-heikki-hellgren-op-financial-group-elaine-bezerra-db-systel-gmbh"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: 'var(--bui-bg-solid, #1f5493)', fontWeight: 600 }}
+        >
+          add it to your schedule
+        </a>
+        .
       </div>
 
       <div style={{ marginBottom: '32px' }}>
