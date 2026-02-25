@@ -4,7 +4,7 @@ import Link from 'next/link'
 import type { ResourceCard } from '@/lib/types'
 import { RiArrowRightLine, RiExternalLinkLine } from '@remixicon/react'
 
-export function WelcomeCard({ title, description, url, isExternal }: ResourceCard) {
+export function WelcomeCard({ title, description, url, isExternal, note }: ResourceCard) {
   const cardStyle = {
     border: '1px solid var(--bui-border-1, #d5d5d5)',
     borderRadius: '8px',
@@ -44,6 +44,19 @@ export function WelcomeCard({ title, description, url, isExternal }: ResourceCar
       >
         {description}
       </p>
+      {note && (
+        <p
+          style={{
+            marginTop: '12px',
+            fontSize: '12px',
+            fontWeight: 700,
+            color: 'var(--bui-fg-primary, #000)',
+            lineHeight: '1.6',
+          }}
+        >
+          {note}
+        </p>
+      )}
       <div
         style={{
           marginTop: '16px',
@@ -62,7 +75,7 @@ export function WelcomeCard({ title, description, url, isExternal }: ResourceCar
           </>
         ) : (
           <>
-            View
+            View Page
             <RiArrowRightLine size={16} />
           </>
         )}

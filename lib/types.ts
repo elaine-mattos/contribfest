@@ -56,6 +56,7 @@ export interface ResourceCard {
   description: string
   url: string
   isExternal: boolean
+  note?: string
 }
 
 // GitHub API pull request response

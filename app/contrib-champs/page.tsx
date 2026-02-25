@@ -30,8 +30,9 @@ export default function ContribChampsPage() {
               margin: 0,
             }}
           >
-            Where commits become legendary! Browse merged pull requests with the contribfest label
-            from Backstage and Community Plugins repositories.
+            Take a look at the fantastic ContribFest contributions that have been merged into the
+            Backstage and Community Plugins repositories — huge thanks to everyone who made them
+            happen!
           </p>
         </div>
 
