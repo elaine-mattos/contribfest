@@ -9,7 +9,8 @@ import {
   getUniqueLabels,
 } from '@/lib/filters'
 import type { FilterOptions } from '@/lib/filters'
-import { RiSearchLine } from '@remixicon/react'
+import { RiSearchLine, RiExternalLinkLine } from '@remixicon/react'
+import { pinnedIssues } from '@/lib/pinned-issues'
 
 interface IssueTableProps {
   issues: EnrichedIssue[]
@@ -113,6 +114,105 @@ export function IssueTable({ issues, initialRepository }: IssueTableProps) {
 
   return (
     <div>
+      {/* Pinned Issue Cards */}
+      <div
+        className="pinned-issues-grid"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: '16px',
+          marginBottom: '24px',
+        }}
+      >
+        {pinnedIssues.map((issue) => {
+          const githubUrl = `https://github.com/${issue.repository}/issues/${issue.issueId}`
+          const badgeColor = getLevelBadgeColor(issue.level)
+          return (
+            <a
+              key={`${issue.repository}-${issue.issueId}`}
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open GitHub issue #${issue.issueId} in ${issue.repository}`}
+              style={{
+                display: 'block',
+                position: 'relative',
+                background: 'var(--bui-bg-popover, #fff)',
+                border: '1px solid var(--bui-border-1, #d5d5d5)',
+                borderRadius: '8px',
+                padding: '16px',
+                textDecoration: 'none',
+                transition: 'all 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                Object.assign(e.currentTarget.style, {
+                  borderColor: 'var(--bui-bg-solid, #1f5493)',
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+                })
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'var(--bui-border-1, #d5d5d5)'
+                e.currentTarget.style.boxShadow = 'none'
+              }}
+            >
+              <span
+                aria-hidden="true"
+                style={{
+                  position: 'absolute',
+                  top: '10px',
+                  right: '10px',
+                  fontSize: '16px',
+                  display: 'block',
+                }}
+              >
+                📌
+              </span>
+              <div
+                style={{
+                  fontSize: '15px',
+                  fontWeight: 700,
+                  color: 'var(--bui-fg-primary, #000)',
+                  marginBottom: '12px',
+                  lineHeight: '1.4',
+                  paddingRight: '28px',
+                }}
+              >
+                {issue.title}
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '8px', marginBottom: '8px' }}>
+                <span
+                  style={{
+                    padding: '4px 8px',
+                    borderRadius: '4px',
+                    fontSize: '12px',
+                    fontWeight: 500,
+                    ...badgeColor,
+                  }}
+                >
+                  {issue.level}
+                </span>
+                <span
+                  style={{
+                    fontSize: '14px',
+                    fontWeight: 500,
+                    color: 'var(--bui-bg-solid, #1f5493)',
+                  }}
+                >
+                  #{issue.issueId}
+                </span>
+                <code style={{ fontSize: '12px', color: 'var(--bui-fg-secondary, #666)' }}>
+                  {issue.repository}
+                </code>
+              </div>
+              <div style={{ marginTop: '12px', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '14px', fontWeight: 500, color: 'var(--bui-bg-solid, #1f5493)' }}>
+                View Issue
+                <RiExternalLinkLine size={14} />
+              </div>
+            </a>
+          )
+        })}
+      </div>
+
       {/* Filters */}
       <div
         className="issue-filters"
