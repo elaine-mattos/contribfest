@@ -3,6 +3,10 @@ import { SessionsSidebar } from '@/components/SessionsSidebar';
 import { hosts } from '@/lib/hosts';
 import { sessions } from '@/lib/sessions';
 
+export const metadata = {
+  title: 'Hall of Hosts',
+}
+
 export default function HallOfHostsPage() {
   return (
     <div className="contrib-champs-layout">
