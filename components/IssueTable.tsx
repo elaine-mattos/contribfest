@@ -116,6 +116,7 @@ export function IssueTable({ issues, initialRepository }: IssueTableProps) {
     <div>
       {/* Pinned Issue Cards */}
       <div
+        className="pinned-issues-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
@@ -135,6 +136,7 @@ export function IssueTable({ issues, initialRepository }: IssueTableProps) {
               aria-label={`Open GitHub issue #${issue.issueId} in ${issue.repository}`}
               style={{
                 display: 'block',
+                position: 'relative',
                 background: 'var(--bui-bg-popover, #fff)',
                 border: '1px solid var(--bui-border-1, #d5d5d5)',
                 borderRadius: '8px',
@@ -153,6 +155,18 @@ export function IssueTable({ issues, initialRepository }: IssueTableProps) {
                 e.currentTarget.style.boxShadow = 'none'
               }}
             >
+              <span
+                aria-hidden="true"
+                style={{
+                  position: 'absolute',
+                  top: '10px',
+                  right: '10px',
+                  fontSize: '16px',
+                  display: 'block',
+                }}
+              >
+                📌
+              </span>
               <div
                 style={{
                   fontSize: '15px',
@@ -160,11 +174,12 @@ export function IssueTable({ issues, initialRepository }: IssueTableProps) {
                   color: 'var(--bui-fg-primary, #000)',
                   marginBottom: '12px',
                   lineHeight: '1.4',
+                  paddingRight: '28px',
                 }}
               >
                 {issue.title}
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '8px', marginBottom: '8px' }}>
                 <span
                   style={{
                     padding: '4px 8px',
@@ -185,10 +200,10 @@ export function IssueTable({ issues, initialRepository }: IssueTableProps) {
                 >
                   #{issue.issueId}
                 </span>
+                <code style={{ fontSize: '12px', color: 'var(--bui-fg-secondary, #666)' }}>
+                  {issue.repository}
+                </code>
               </div>
-              <code style={{ fontSize: '12px', color: 'var(--bui-fg-secondary, #666)' }}>
-                {issue.repository}
-              </code>
               <div style={{ marginTop: '12px', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '14px', fontWeight: 500, color: 'var(--bui-bg-solid, #1f5493)' }}>
                 View Issue
                 <RiExternalLinkLine size={14} />

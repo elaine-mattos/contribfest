@@ -388,6 +388,10 @@ button {
     grid-template-columns: 1fr !important;
   }
 
+  .pinned-issues-grid {
+    grid-template-columns: 1fr !important;
+  }
+
   .issue-filters {
     display: none !important;
   }
