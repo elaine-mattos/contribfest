@@ -2,11 +2,6 @@ import { HostCard } from '@/components/HostCard';
 import { SessionsSidebar } from '@/components/SessionsSidebar';
 import { hosts } from '@/lib/hosts';
 import { sessions } from '@/lib/sessions';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Hall of Hosts',
-}
 
 export default function HallOfHostsPage() {
   return (
