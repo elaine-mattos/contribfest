@@ -256,6 +256,15 @@ const nativeChecklist: ChecklistItemType[] = [
     ],
   },
   ...forkItems,
+  {
+    id: 'contributing-guidelines',
+    label: 'Read the Contributing Guidelines',
+    description:
+      'Before opening a PR, make sure you have read the [Backstage Contributing Guidelines](https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md). It covers commit conventions, code style, testing expectations, and the review process.',
+    icon: 'book',
+    link: 'https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md',
+    completed: false,
+  },
 ];
 
 const devcontainerChecklist: ChecklistItemType[] = [
@@ -356,6 +365,15 @@ const devcontainerChecklist: ChecklistItemType[] = [
     ],
   },
   ...forkItems,
+  {
+    id: 'contributing-guidelines',
+    label: 'Read the Contributing Guidelines',
+    description:
+      'Before opening a PR, make sure you have read the [Backstage Contributing Guidelines](https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md). It covers commit conventions, code style, testing expectations, and the review process.',
+    icon: 'book',
+    link: 'https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md',
+    completed: false,
+  },
 ];
 
 export default function GettingStartedPage() {
