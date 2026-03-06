@@ -260,10 +260,27 @@ const nativeChecklist: ChecklistItemType[] = [
     id: 'contributing-guidelines',
     label: 'Read the Contributing Guidelines',
     description:
-      'Before opening a PR, make sure you have read the [Backstage Contributing Guidelines](https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md). It covers commit conventions, code style, testing expectations, and the review process.',
+      'Before opening a PR, make sure you have read the contributing guidelines for the repo you are contributing to.',
     icon: 'book',
-    link: 'https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md',
     completed: false,
+    children: [
+      {
+        id: 'contributing-guidelines-backstage',
+        label: 'Backstage Repository',
+        description:
+          'Read the [Backstage Contributing Guidelines](https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md).',
+        icon: 'book',
+        completed: false,
+      },
+      {
+        id: 'contributing-guidelines-community-plugins',
+        label: 'Community Plugins Repository',
+        description:
+          'Read the [Community Plugins Contributing Guidelines](https://github.com/backstage/community-plugins/blob/main/CONTRIBUTING.md).',
+        icon: 'book',
+        completed: false,
+      },
+    ],
   },
 ];
 
@@ -369,10 +386,27 @@ const devcontainerChecklist: ChecklistItemType[] = [
     id: 'contributing-guidelines',
     label: 'Read the Contributing Guidelines',
     description:
-      'Before opening a PR, make sure you have read the [Backstage Contributing Guidelines](https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md). It covers commit conventions, code style, testing expectations, and the review process.',
+      'Before opening a PR, make sure you have read the contributing guidelines for the repo you are contributing to.',
     icon: 'book',
-    link: 'https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md',
     completed: false,
+    children: [
+      {
+        id: 'contributing-guidelines-backstage',
+        label: 'Backstage Repository',
+        description:
+          'Read the [Backstage Contributing Guidelines](https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md).',
+        icon: 'book',
+        completed: false,
+      },
+      {
+        id: 'contributing-guidelines-community-plugins',
+        label: 'Community Plugins Repository',
+        description:
+          'Read the [Community Plugins Contributing Guidelines](https://github.com/backstage/community-plugins/blob/main/CONTRIBUTING.md).',
+        icon: 'book',
+        completed: false,
+      },
+    ],
   },
 ];
 
